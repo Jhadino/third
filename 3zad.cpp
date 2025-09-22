@@ -54,3 +54,34 @@ bool isValidGuess(const string& guess)
     }
     return uniqueChars.size() == 4;
 }
+int main() {
+    cout << "Welcome in game 'BAC'"<< endl;
+    cout << " The computer ordered a 4-digit number with different numbers" << endl;
+    string secret = generateSecretNumber();
+    int attemps = 0;
+    string guess;
+
+    while (true) {
+        cout <<"enter your guess" << endl;
+        cin >> guess;
+        if (!isValidGuess(guess)){
+            cout << "ERROR" << endl;
+            continue;
+        }
+        attemps++;
+        auto result = countBAC(secret, guess);
+        int bulls = result.first;
+        int cows = result.second;
+
+        if (bulls == 4) {
+            cout << "CONGRATS YOU WIN " << secret << "For " << attemps << "attemps" << endl;
+            break;
+
+
+
+        }
+        cout << bulls << "bulls and " << cows << "cows" << endl;
+
+    }
+    return 0;
+}
