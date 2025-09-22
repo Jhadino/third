@@ -7,9 +7,9 @@ void createFile(const std::string& filename) {
     std::ofstream file(filename);
     if (!file) {
         std::cerr << "cant open file " << filename << std::endl;
-        return;
-    }
 
+    }
+    else{
     for (int i = 0; i < 10; ++i) {
         int randomNumber = rand() % 10 + 1;
         file << randomNumber;
@@ -18,6 +18,8 @@ void createFile(const std::string& filename) {
         }
     }
     file.close();
+    }
+
 }
 
 int main() {
