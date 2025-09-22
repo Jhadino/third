@@ -44,3 +44,13 @@ pair<int, int> countBAC(const string& secret, const string& guess){
     }
     return make_pair(bulls, cows);
 }
+bool isValidGuess(const string& guess)
+{
+    if (guess.length() !=4 ) return false;
+    set<char> uniqueChars;
+    for (char c : guess) {
+        if (!isdigit(c)) return false;
+        uniqueChars.insert(c);
+    }
+    return uniqueChars.size() == 4;
+}
