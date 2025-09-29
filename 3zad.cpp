@@ -44,7 +44,7 @@ pair<int, int> countBAC(const string& secret, const string& guess){
     }
     return make_pair(bulls, cows);
 }
-bool isValidGuess(const string& guess)
+bool isValid(const string& guess)
 {
     if (guess.length() !=4 ) return false;
     set<char> uniqueChars;
@@ -64,7 +64,7 @@ int main() {
     while (true) {
         cout <<"enter your guess" << endl;
         cin >> guess;
-        if (!isValidGuess(guess)){
+        if (!isValid(guess)){
             cout << "ERROR" << endl;
             continue;
         }
@@ -74,7 +74,7 @@ int main() {
         int cows = result.second;
 
         if (bulls == 4) {
-            cout << "CONGRATS YOU WIN " << secret << "For " << attemps << "attemps" << endl;
+            cout << "CONGRATS YOU WIN " << secret << " For " << attemps << "attemps" << endl;
             break;
 
 
