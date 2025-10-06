@@ -56,7 +56,7 @@ bool isValid(const string& guess)
 }
 int main() {
     cout << "Welcome in game 'BAC'"<< endl;
-    cout << " The computer ordered a 4-digit number with different numbers" << endl;
+    cout << "The computer ordered a 4-digit number with different numbers" << endl;
     string secret = generateSecretNumber();
     int attemps = 0;
     string guess;
